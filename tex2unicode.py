@@ -114,7 +114,7 @@ def command_lookup_table(command,states):
             "Eta" : u"\u0397",
             "Theta" : u"\u0398",
             "Iota" : u"\u0399",
-            "Kappa", "\u039A",
+            "Kappa": u"\u039A",
             "Lambda" : u"\u039B",
             "Mu" : u"\u039C",
             "Nu" : u"\u039D",
