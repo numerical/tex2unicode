@@ -218,7 +218,10 @@ def command_run_input(data, buffer, command):
     if command != "/input return":
         return weechat.WEECHAT_RC_OK
     # get buffer to parse/replace
-    inbuffer = unicode(weechat.buffer_get_string(buffer, 'input'))
+    try:
+        inbuffer = unicode(weechat.buffer_get_string(buffer, 'input'))
+    except UnicodeDecodeError:
+        inbuffer = unicde(weechat.buffer_get_string(buffer, 'input'))
     # don't interfere with any weechat commands other than /me
     if inbuffer.startswith('/') and not inbuffer.startswith('/me'):
         return weechat.WEECHAT_RC_OK
